@@ -1,0 +1,7 @@
+# This file is used by MODULE.bazel to install the dependencies for the golden
+# config testing.  It is not used by the main codebase.
+#
+# The dependencies are the same as the ones in pyproject.toml, but we use a
+# different file to avoid conflicts with the main codebase.
+#
+absl-py

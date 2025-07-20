@@ -1,0 +1,1 @@
+py_binary(name = "a", srcs = ["a.py"], deps = ["@pip//absl_py"])

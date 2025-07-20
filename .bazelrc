@@ -1,0 +1,14 @@
+# Enable modern dependency management (Bzlmod) -- as explained in
+# https://bazel.build/external/migration, we will use MODULE.bazel to replace
+# WORKSPACE.
+common --enable_bzlmod
+
+# Output to bazel-build/{bin,out,testlogs} rather than bazel-{bin,out,testlogs}
+build --symlink_prefix=.bazel-build/
+
+# Better test output for your golden config tests
+test --test_output=errors
+test --test_summary=detailed
+
+# Use all available CPU cores
+build --jobs=auto
