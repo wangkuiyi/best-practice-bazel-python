@@ -131,8 +131,10 @@ The file `requirements.txt` usually contains loose version constraints. We run t
 
 ```bash
 pip install pip-tools
-pip-compile requirements.txt -o requirements_lock.txt
+pip-compile --allow-unsafe --no-strip-extras -o requirements_lock.txt requirements.txt
 ```
+
+Please be aware of the options `--allow-unsafe` and `--no-strip-extras`.  We need them; otherwise, `pip-compile` will ignore "unsafe" packages like setuptools, which is required by TensorFlow, a dependency of AXLearn.
 
 ### Install Dependencies
 
