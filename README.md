@@ -167,10 +167,23 @@ The following command builds and runs all targets:
 ```bash
 bazel run //...
 ```
+
 and tests
 
 ```bash
 bazel test --cache_test_results=no --test_output=all //...
+```
+
+Run pytype checks without cache (always fresh)
+
+```bash
+bazel test --cache_test_results=no --test_tag_filters=pytype //...
+```
+
+Run all tests EXCEPT pytype (useful for CI)
+
+```bash
+bazel test --test_tag_filters=-pytype //...
 ```
 
 ### Output Directories
