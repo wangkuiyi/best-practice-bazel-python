@@ -167,6 +167,11 @@ The following command builds and runs all targets:
 ```bash
 bazel run //...
 ```
+and tests
+
+```bash
+bazel test --cache_test_results=no --test_output=all //...
+```
 
 ### Output Directories
 

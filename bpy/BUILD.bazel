@@ -1,5 +1,18 @@
-py_binary(name = "a", srcs = ["a.py"], deps = ["@pip//absl_py", ":b"])
-py_library(name = "b", srcs = ["b.py"])
-
+load("//pytype:pytype.bzl", "pytype_binary", "pytype_library")
 load(":b.bzl", "foo_binary")
-foo_binary(name="bin")
+
+pytype_binary(
+    name = "a",
+    srcs = ["a.py"],
+    deps = [
+        ":b",
+        "@pip//absl_py",
+    ],
+)
+
+pytype_library(
+    name = "b",
+    srcs = ["b.py"],
+)
+
+foo_binary(name = "bin")

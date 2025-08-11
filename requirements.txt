@@ -5,3 +5,4 @@
 # different file to avoid conflicts with the main codebase.
 #
 absl-py
+pytype

@@ -11,8 +11,8 @@ bazel_dep(name = "bazel_skylib", version = "1.8.1")
 
 # Python toolchain setup
 python = use_extension("@rules_python//python/extensions:python.bzl", "python")
-python.toolchain(python_version = "3.10") # Same version as pyproject.toml.
+python.toolchain(python_version = "3.12")  # Match system Python version.
 
 pip = use_extension("@rules_python//python/extensions:pip.bzl", "pip")
-pip.parse(hub_name = "pip", python_version = "3.10", requirements_lock = "//:requirements_lock.txt")
+pip.parse(hub_name = "pip", python_version = "3.12", requirements_lock = "//:requirements_lock.txt")
 use_repo(pip, "pip")
